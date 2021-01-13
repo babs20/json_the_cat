@@ -8,7 +8,7 @@ const fetchBreedDescription = (breed, done) => {
     }
     const data = JSON.parse(body);
     if (data.length === 0) { // make sure cat exists
-      done('That cat does not exist.');
+      done('That cat does not exist.', null);
       return;
     }
     if (data[0] !== undefined) { // make sure it has an object
@@ -17,6 +17,4 @@ const fetchBreedDescription = (breed, done) => {
   })
 };
 
-module.exports = fetchBreedDescription;
-
-
+module.exports = { fetchBreedDescription };
